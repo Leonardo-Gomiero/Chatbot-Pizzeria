@@ -1,0 +1,69 @@
+version: '3.1'
+intents:
+- agradecimento
+- descricao_item
+- id_pedido
+- pedido_comida
+- saudacao
+- status
+- confirmacao
+- negacao
+- info_endereco
+actions:
+  - action_sabores_pizzas
+entities:
+- sabor
+- qtde
+- num_pedido
+slots:
+  pedido_pizza:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: sabor
+  qtde_pizza:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: qtde
+  num_pedido_cliente:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: num_pedido
+  endereco_cliente:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      intent: info_endereco
+responses:
+  utter_saudacao:
+  - text: Olá e seja bem vindo! Como posso ajudá-lo
+  utter_pedido_comida:
+  - text: Certo, o que você gostaria de pedir hoje conosco
+  utter_descricao_item:
+  - text: Entendido, você deseja uma pizza de ->
+  utter_status:
+  - text: Você pode me informar o código do pedido?
+  utter_id_pedido:
+  - text: Seu pedido {num_pedido_cliente} está à caminho
+  utter_agradecimento:
+  - text: Obrigado pela preferencia, conte sempre conosco
+  utter_reformular:
+  - text: Me desculpe, você poderia reformular a sua frase?
+  utter_default:
+  - text: Desculpe, mas não estou entendendo o que você quer. Favor, reformular.
+  utter_info_endereco:
+  - text: Seu endereco é o {endereco_cliente}?
+  utter_solicita_endereco:
+  - text: Me informe o seu endereco completo, por favor.
+  utter_finalizacao_pedido:
+  - text: Seu pedido foi devidamente registrado no código XYZ. Obrigado!
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+

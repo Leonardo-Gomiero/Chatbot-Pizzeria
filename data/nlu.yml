@@ -1,0 +1,102 @@
+version: "3.1"
+nlu:
+- intent: saudacao
+  examples: |
+    - hey
+    - olá
+    - oi
+    - boa tarde
+    - bom dia
+    - boa noite
+    - fala meu chapa
+    - opa, tudo bem?
+- intent: pedido_comida
+  examples: |
+    - Gostaria de pedir uma pizza
+    - Quero encomendar uma pizza
+    - Você pode anotar o meu pedido?
+    - Quero fazer um pedido
+    - Quero pedir uma pizza
+    - Você pode me ajudar a pedir uma pizza
+    - Posso fazer um pedido?
+    - Me vê uma pizza
+    - quero comprar uma pizza
+- intent: descricao_item
+  examples: |
+    - Quero [uma](qtde) pizza de [calabreza](sabor)
+    - [Uma](qtde) pizza de [frango e catupiry](sabor)
+    - [Meia](qtde) [calabreza](sabor) e [meia](qtde) [atum](sabor)
+    - Quero [uma](qtde) pizzas, [1x](qtde) de [mussarela](sabor) e [uma](qtde) [americana](sabor)
+    - Quero [uma](qtde) pizza de [bacon](sabor)
+    - [1](qtde) pizza de [marguerita](sabor) e [uma](qtde) de [milho](sabor)
+    - Gostaria de [uma](qtde) pizza de [atum](sabor) sem cebola
+    - Três pizzas, [uma](qtde) de [3 queijos](sabor), [uma](qtde) de [strogonoff](sabor), e uma [1/2](qtde) [mussarela](sabor) e [1/2](qtde) [portuguesa](sabor)
+    - quero [2x](qtde) pizzas de [atum](sabor)
+    - Me vê [duas]](qtde) pizzas de [portuguesa](sabor)
+    - Providencie [três](qtde) de [Nutella](sabor)
+    - Eu ordeno [4](qtde) pizzas de [muçarela](sabor) e [89](qtde) pizzas de [prestígio](sabor)
+- intent: status
+  examples: |
+    - Qual o status do meu pedido?
+    - Meu pedido ainda não chegou!
+    - Quero saber porque o meu pedido ainda não chegou
+    - Onde está o meu pedido?
+    - Ainda não recebi minha pizza
+    - Cade a minha comida?
+    - Pode me dizer, por favor, onde está a minha pizza?
+    - Onde está a minha comida?
+    - Quando vai chegar minha pizza?
+    - cade a minha pizza
+- intent: id_pedido
+  examples: |
+    - O número do meu pedido é o [57641](num_pedido)
+    - Meu pedido é o [01935](num_pedido)
+    - o número é o [12579](num_pedido)
+    - claro, o pedido é o [09836](num_pedido)
+    - n: [23456](num_pedido)
+    - [10936](num_pedido)
+    - pedido numero: [09354](num_pedido)
+    - o pedido é [12579](num_pedido)
+    - o pedido é [12387](num_pedido)
+- intent: agradecimento
+  examples: |
+    - Obrigado
+    - Valeu
+    - Valeu bot, você demais
+    - Agradeço a ajuda
+    - desde já agradeço
+    - vlw
+    - Muito obrigado pela ajuda
+    - obg
+    - você é top
+- intent: confirmacao
+  examples: |  
+    - Sim
+    - yeap
+    - com certeza
+    - claro
+    - yeah
+    - ok
+    - Sem dúvidas
+    - Isso aí
+- intent: negacao
+  examples: |
+    - Não
+    - Não mesmo
+    - Nope
+    - nok
+    - nem
+    - jamais
+    - nunca
+- intent: info_endereco
+  examples: |
+    - Rua Palmares, número 20, São Bernardo do Campo
+    - Avenida João Firmino, 1320, apto 2, bloco 3, São Caetano do Sul
+    - Rua XV de Outubro, 130, Vila Oliveira, Santo André
+    - Rua Ministro Otávio de Souza, número 12, São Paulo
+    - Avenida Principe de Gales, nº1098, bl 2, apto 26, Sto André
+    - Avenida Kennedy, 1423, Vila dos Presidentes, São Paulo
+    - Rua Jurubatuba, n 534, Centro, SBC
+- regex: num_pedido
+  examples: |
+    - \d{5}
